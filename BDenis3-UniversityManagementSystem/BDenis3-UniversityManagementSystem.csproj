@@ -64,6 +64,7 @@
     </Compile>
     <Compile Include="DAL\UserRole.cs" />
     <Compile Include="DAL\User.cs" />
+    <Compile Include="DAL\Term.cs" />
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
