@@ -14,7 +14,6 @@ namespace BDenis3_UniversityManagementSystem
         // private variables for each instance
         private int _status_id;
         private string _status_name;
-        private string _user_id;
         private bool _isactive;
 
 

@@ -16,7 +16,6 @@ namespace BDenis3_UniversityManagementSystem
         private string _term_name;
         private DateTime _term_start;
         private DateTime _term_end;
-        private string _user_id;
         private bool _isactive;
 
 
