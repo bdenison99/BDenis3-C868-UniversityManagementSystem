@@ -47,6 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\CourseCatalog.cs" />
+    <Compile Include="DAL\CourseAssessment.cs" />
+    <Compile Include="DAL\Assessment.cs" />
     <Compile Include="DAL\AssessmentType.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>

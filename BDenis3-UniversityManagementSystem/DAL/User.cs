@@ -80,7 +80,7 @@ namespace BDenis3_UniversityManagementSystem
                 u.HomePhone = (DBNull.Value == record["home_phone"]) ? string.Empty : (string)record["home_phone"];
                 u.SchoolEmail = (DBNull.Value == record["school_email"]) ? string.Empty : (string)record["school_email"];
                 u.HomeEmail = (DBNull.Value == record["home_email"]) ? string.Empty : (string)record["home_email"];
-                u.IsActive = (DBNull.Value == record["is_active"]) ? false : (bool)record["is_active"];
+                u.IsActive = DBNull.Value != record["is_active"] && (bool)record["is_active"];
             }
             catch
             {

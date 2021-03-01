@@ -39,7 +39,7 @@ namespace BDenis3_UniversityManagementSystem
                 at.AssessmentTypeID = (DBNull.Value == record["assessmenttype_id"]) ? 0 : (int)record["assessmenttype_id"];
                 at.AssessmentTypeName = (DBNull.Value == record["name"]) ? string.Empty : (string)record["name"];
                 at.AssessmentTypeDescription = (DBNull.Value == record["desc"]) ? string.Empty : (string)record["desc"];
-                at.IsActive = (DBNull.Value == record["is_active"]) ? false : (bool)record["is_active"];
+                at.IsActive = DBNull.Value != record["is_active"] && (bool)record["is_active"];
             }
             catch
             {

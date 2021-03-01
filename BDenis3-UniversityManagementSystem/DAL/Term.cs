@@ -42,7 +42,7 @@ namespace BDenis3_UniversityManagementSystem
                 t.TermName = (DBNull.Value == record["term_title"]) ? string.Empty : (string)record["term_title"];
                 t.TermStart = (DBNull.Value == record["term_start"]) ? DateTime.Now : (DateTime)record["term_start"];
                 t.TermEnd = (DBNull.Value == record["legal_name"]) ? DateTime.Now : (DateTime)record["term_end"];
-                t.IsActive = (DBNull.Value == record["is_active"]) ? false : (bool)record["is_active"];
+                t.IsActive = DBNull.Value != record["is_active"] && (bool)record["is_active"];
             }
             catch
             {

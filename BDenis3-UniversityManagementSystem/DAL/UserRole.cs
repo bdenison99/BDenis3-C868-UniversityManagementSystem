@@ -33,7 +33,7 @@ namespace BDenis3_UniversityManagementSystem
                 {
                     role.RoleID = (DBNull.Value == record["user_role_id"]) ? 0 : (int)record["user_role_id"];
                     role.RoleName = (DBNull.Value == record["role_name"]) ? string.Empty : (string)record["role_name"];
-                    role.IsActive = (DBNull.Value == record["is_active"]) ? false : (bool)record["is_active"];
+                    role.IsActive = DBNull.Value != record["is_active"] && (bool)record["is_active"];
                 }
                 catch
                 {

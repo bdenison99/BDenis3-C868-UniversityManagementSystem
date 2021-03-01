@@ -9,45 +9,48 @@ using System.Threading.Tasks;
 
 namespace BDenis3_UniversityManagementSystem
 {
-    class Status
+    class CourseAssessment
     {
         // private variables for each instance
-        private int _status_id;
-        private string _status_name;
+        private int _courseassessmentid;
+        private int _course_id;
+        private int _assessment_id;
         private bool _isactive;
 
 
         // Property declarations for the private variables that can be modified by the application
-        public int StatusID { get => _status_id; set => _status_id = value; }
-        public string StatusName { get => _status_name; set => _status_name = value; }
+        public int CourseAssessmentID { get => _courseassessmentid; set => _courseassessmentid = value; }
+        public int CourseID { get => _course_id; set => _course_id = value; }
+        public int AssessmentID { get => _assessment_id; set => _assessment_id = value; }
         public bool IsActive { get => _isactive; set => _isactive = value; }
     }
 
-    class StatusMapper : MapperBase<Status>
+    class CourseAssessmentMapper : MapperBase<CourseAssessment>
     {
         /*
          * This is the User Mapper Class which maps a database record to a User class object instance
          */
-        protected override Status Map(IDataRecord record)
+        protected override CourseAssessment Map(IDataRecord record)
         {
-            Status s = new Status();
+            CourseAssessment ca = new CourseAssessment();
 
             try
             {
-                s.StatusID = (DBNull.Value == record["status_id"]) ? 0 : (int)record["status_id"];
-                s.StatusName = (DBNull.Value == record["name"]) ? string.Empty : (string)record["name"];
-                s.IsActive = DBNull.Value != record["is_active"] && (bool)record["is_active"];
+                ca.CourseAssessmentID = (DBNull.Value == record["course_assessment_id"]) ? 0 : (int)record["course_assessment_id"];
+                ca.CourseID = (DBNull.Value == record["courseid"]) ? 0 : (int)record["courseid"];
+                ca.AssessmentID = (DBNull.Value == record["assessmentid"]) ? 0 : (int)record["assessmentid"];
+                ca.IsActive = DBNull.Value != record["is_active"] && (bool)record["is_active"];
             }
             catch
             {
 
             }
-            return s;
+            return ca;
 
         }
     }
 
-    class StatusReader : ObjectReaderBase<Status>
+    class CourseAssessmentReader : ObjectReaderBase<CourseAssessment>
     {
         /*
          * This UserReader class is used to execute the SELECT statement in the database and map the rows
@@ -55,7 +58,7 @@ namespace BDenis3_UniversityManagementSystem
          */
         protected override string SqlCommand
         {
-            get { return "SELECT * FROM ums.status;"; }
+            get { return "SELECT * FROM ums.course_assessments;"; }
         }
 
         protected override CommandType SqlCommandType
@@ -69,9 +72,9 @@ namespace BDenis3_UniversityManagementSystem
             return parameters;
         }
 
-        protected override MapperBase<Status> GetMapper()
+        protected override MapperBase<CourseAssessment> GetMapper()
         {
-            MapperBase<Status> mapr = new StatusMapper();
+            MapperBase<CourseAssessment> mapr = new CourseAssessmentMapper();
             return mapr;
         }
     }
