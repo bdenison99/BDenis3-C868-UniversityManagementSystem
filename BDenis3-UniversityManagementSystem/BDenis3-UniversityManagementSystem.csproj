@@ -47,6 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\CourseLoad.cs" />
+    <Compile Include="DAL\Appointment.cs" />
     <Compile Include="DAL\AssessmentResult.cs" />
     <Compile Include="DAL\CourseCatalog.cs" />
     <Compile Include="DAL\CourseAssessment.cs" />
